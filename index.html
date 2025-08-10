@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Resume</title>
+  <meta name="description" content="Resume PDF hosted as a simple HTML page">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin:0; padding:0; display:flex; flex-direction:column; min-height:100vh; }
+    header { padding:12px 16px; background:#f7f7f7; border-bottom:1px solid #e6e6e6; }
+    .container { flex:1; display:flex; gap:16px; padding:16px; }
+    .viewer { flex:1 1 auto; min-height:60vh; }
+    .sidebar { width:260px; max-width:40%; box-sizing:border-box; padding:12px; border-left:1px solid #eee; }
+    a.button { display:inline-block; padding:8px 12px; text-decoration:none; border-radius:6px; background:#111; color:#fff; }
+    .note { font-size:0.9rem; color:#444; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>My Resume</strong>
+  </header>
+
+  <main class="container">
+    <section class="viewer">
+      <embed src="resume.pdf" type="application/pdf" width="100%" height="800px">
+      <p class="note">If the PDF did not load above, <a href="resume.pdf" target="_blank" rel="noopener">click here to open/download the PDF</a>.</p>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Download</h3>
+      <p><a class="button" href="resume.pdf" download>Download resume (PDF)</a></p>
+      <h3>Quick tips</h3>
+      <ul>
+        <li class="note">Make sure <code>resume.pdf</code> is at the same directory level as <code>index.html</code>.</li>
+        <li class="note">If you rename the file, update the <code>src="..."</code> and <code>href="..."</code> values accordingly.</li>
+        <li class="note">Vercel will serve this as a static site with the URL provided after deploy.</li>
+      </ul>
+      <hr>
+      <p class="note">Want the page to present full-window PDF automatically? Replace the <code>height</code> on the <code>&lt;embed&gt;</code> with <code>100vh</code>.</p>
+    </aside>
+  </main>
+
+  <footer style="padding:12px 16px; font-size:0.9rem; color:#666; border-top:1px solid #eee;">
+    Hosted from GitHub &amp; deployed on Vercel — simple static HTML + PDF.
+  </footer>
+</body>
+</html>
